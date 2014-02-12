@@ -21,6 +21,9 @@
 		5CD3B77218AA0EF100F569CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD3B75418AA0EF100F569CF /* UIKit.framework */; };
 		5CD3B77A18AA0EF100F569CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B77818AA0EF100F569CF /* InfoPlist.strings */; };
 		5CD3B77C18AA0EF100F569CF /* passwordSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */; };
+		5CD3B78718AA0F5600F569CF /* HANPasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */; };
+		6954DBAD18ABBC5D00C7BEBE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6954DBAC18ABBC5D00C7BEBE /* README.md */; };
+		6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,25 +37,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5CD3B74D18AA0EF100F569CF /* passwordSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = passwordSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD3B74D18AA0EF100F569CF /* HANPasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HANPasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B75018AA0EF100F569CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CD3B75218AA0EF100F569CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5CD3B75418AA0EF100F569CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5CD3B75818AA0EF100F569CF /* passwordSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "passwordSystem-Info.plist"; sourceTree = "<group>"; };
+		5CD3B75818AA0EF100F569CF /* HANPasswordManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HANPasswordManager-Info.plist"; sourceTree = "<group>"; };
 		5CD3B75A18AA0EF100F569CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5CD3B75C18AA0EF100F569CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5CD3B75E18AA0EF100F569CF /* passwordSystem-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "passwordSystem-Prefix.pch"; sourceTree = "<group>"; };
+		5CD3B75E18AA0EF100F569CF /* HANPasswordManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HANPasswordManager-Prefix.pch"; sourceTree = "<group>"; };
 		5CD3B75F18AA0EF100F569CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5CD3B76018AA0EF100F569CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5CD3B76318AA0EF100F569CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CD3B76518AA0EF100F569CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5CD3B76618AA0EF100F569CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5CD3B76818AA0EF100F569CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5CD3B76E18AA0EF100F569CF /* passwordSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = passwordSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD3B76E18AA0EF100F569CF /* HANPasswordManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HANPasswordManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B76F18AA0EF100F569CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5CD3B77718AA0EF100F569CF /* passwordSystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "passwordSystemTests-Info.plist"; sourceTree = "<group>"; };
+		5CD3B77718AA0EF100F569CF /* HANPasswordManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HANPasswordManagerTests-Info.plist"; sourceTree = "<group>"; };
 		5CD3B77918AA0EF100F569CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = passwordSystemTests.m; sourceTree = "<group>"; };
+		5CD3B78518AA0F5600F569CF /* HANPasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANPasswordManager.h; sourceTree = "<group>"; };
+		5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANPasswordManager.m; sourceTree = "<group>"; };
+		6954DBAC18ABBC5D00C7BEBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +99,8 @@
 		5CD3B74E18AA0EF100F569CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B74D18AA0EF100F569CF /* passwordSystem.app */,
-				5CD3B76E18AA0EF100F569CF /* passwordSystemTests.xctest */,
+				5CD3B74D18AA0EF100F569CF /* HANPasswordManager.app */,
+				5CD3B76E18AA0EF100F569CF /* HANPasswordManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 				5CD3B76218AA0EF100F569CF /* Main.storyboard */,
 				5CD3B76518AA0EF100F569CF /* ViewController.h */,
 				5CD3B76618AA0EF100F569CF /* ViewController.m */,
+				5CD3B78518AA0F5600F569CF /* HANPasswordManager.h */,
+				5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */,
 				5CD3B76818AA0EF100F569CF /* Images.xcassets */,
 				5CD3B75718AA0EF100F569CF /* Supporting Files */,
 			);
@@ -126,10 +135,12 @@
 		5CD3B75718AA0EF100F569CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B75818AA0EF100F569CF /* passwordSystem-Info.plist */,
+				5CD3B75818AA0EF100F569CF /* HANPasswordManager-Info.plist */,
 				5CD3B75918AA0EF100F569CF /* InfoPlist.strings */,
 				5CD3B75C18AA0EF100F569CF /* main.m */,
-				5CD3B75E18AA0EF100F569CF /* passwordSystem-Prefix.pch */,
+				5CD3B75E18AA0EF100F569CF /* HANPasswordManager-Prefix.pch */,
+				6954DBAC18ABBC5D00C7BEBE /* README.md */,
+				6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,7 +157,7 @@
 		5CD3B77618AA0EF100F569CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B77718AA0EF100F569CF /* passwordSystemTests-Info.plist */,
+				5CD3B77718AA0EF100F569CF /* HANPasswordManagerTests-Info.plist */,
 				5CD3B77818AA0EF100F569CF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -155,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CD3B74C18AA0EF100F569CF /* passwordSystem */ = {
+		5CD3B74C18AA0EF100F569CF /* HANPasswordManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CD3B77F18AA0EF100F569CF /* Build configuration list for PBXNativeTarget "passwordSystem" */;
+			buildConfigurationList = 5CD3B77F18AA0EF100F569CF /* Build configuration list for PBXNativeTarget "HANPasswordManager" */;
 			buildPhases = (
 				5CD3B74918AA0EF100F569CF /* Sources */,
 				5CD3B74A18AA0EF100F569CF /* Frameworks */,
@@ -167,14 +178,14 @@
 			);
 			dependencies = (
 			);
-			name = passwordSystem;
+			name = HANPasswordManager;
 			productName = passwordSystem;
-			productReference = 5CD3B74D18AA0EF100F569CF /* passwordSystem.app */;
+			productReference = 5CD3B74D18AA0EF100F569CF /* HANPasswordManager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5CD3B76D18AA0EF100F569CF /* passwordSystemTests */ = {
+		5CD3B76D18AA0EF100F569CF /* HANPasswordManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CD3B78218AA0EF100F569CF /* Build configuration list for PBXNativeTarget "passwordSystemTests" */;
+			buildConfigurationList = 5CD3B78218AA0EF100F569CF /* Build configuration list for PBXNativeTarget "HANPasswordManagerTests" */;
 			buildPhases = (
 				5CD3B76A18AA0EF100F569CF /* Sources */,
 				5CD3B76B18AA0EF100F569CF /* Frameworks */,
@@ -185,9 +196,9 @@
 			dependencies = (
 				5CD3B77418AA0EF100F569CF /* PBXTargetDependency */,
 			);
-			name = passwordSystemTests;
+			name = HANPasswordManagerTests;
 			productName = passwordSystemTests;
-			productReference = 5CD3B76E18AA0EF100F569CF /* passwordSystemTests.xctest */;
+			productReference = 5CD3B76E18AA0EF100F569CF /* HANPasswordManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CD3B74818AA0EF100F569CF /* Build configuration list for PBXProject "passwordSystem" */;
+			buildConfigurationList = 5CD3B74818AA0EF100F569CF /* Build configuration list for PBXProject "HANPasswordManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,8 +228,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CD3B74C18AA0EF100F569CF /* passwordSystem */,
-				5CD3B76D18AA0EF100F569CF /* passwordSystemTests */,
+				5CD3B74C18AA0EF100F569CF /* HANPasswordManager */,
+				5CD3B76D18AA0EF100F569CF /* HANPasswordManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */,
+				6954DBAD18ABBC5D00C7BEBE /* README.md in Resources */,
 				5CD3B76918AA0EF100F569CF /* Images.xcassets in Resources */,
 				5CD3B75B18AA0EF100F569CF /* InfoPlist.strings in Resources */,
 				5CD3B76418AA0EF100F569CF /* Main.storyboard in Resources */,
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD3B78718AA0F5600F569CF /* HANPasswordManager.m in Sources */,
 				5CD3B76718AA0EF100F569CF /* ViewController.m in Sources */,
 				5CD3B76118AA0EF100F569CF /* AppDelegate.m in Sources */,
 				5CD3B75D18AA0EF100F569CF /* main.m in Sources */,
@@ -268,7 +282,7 @@
 /* Begin PBXTargetDependency section */
 		5CD3B77418AA0EF100F569CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CD3B74C18AA0EF100F569CF /* passwordSystem */;
+			target = 5CD3B74C18AA0EF100F569CF /* HANPasswordManager */;
 			targetProxy = 5CD3B77318AA0EF100F569CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -379,9 +393,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "passwordSystem/passwordSystem-Prefix.pch";
-				INFOPLIST_FILE = "passwordSystem/passwordSystem-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "passwordSystem/HANPasswordManager-Prefix.pch";
+				INFOPLIST_FILE = "passwordSystem/HANPasswordManager-Info.plist";
+				PRODUCT_NAME = HANPasswordManager;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,9 +406,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "passwordSystem/passwordSystem-Prefix.pch";
-				INFOPLIST_FILE = "passwordSystem/passwordSystem-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "passwordSystem/HANPasswordManager-Prefix.pch";
+				INFOPLIST_FILE = "passwordSystem/HANPasswordManager-Info.plist";
+				PRODUCT_NAME = HANPasswordManager;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -415,8 +429,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "passwordSystemTests/passwordSystemTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "passwordSystemTests/HANPasswordManagerTests-Info.plist";
+				PRODUCT_NAME = HANPasswordManagerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -434,8 +448,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "passwordSystem/passwordSystem-Prefix.pch";
-				INFOPLIST_FILE = "passwordSystemTests/passwordSystemTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "passwordSystemTests/HANPasswordManagerTests-Info.plist";
+				PRODUCT_NAME = HANPasswordManagerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -444,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CD3B74818AA0EF100F569CF /* Build configuration list for PBXProject "passwordSystem" */ = {
+		5CD3B74818AA0EF100F569CF /* Build configuration list for PBXProject "HANPasswordManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CD3B77D18AA0EF100F569CF /* Debug */,
@@ -453,21 +467,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CD3B77F18AA0EF100F569CF /* Build configuration list for PBXNativeTarget "passwordSystem" */ = {
+		5CD3B77F18AA0EF100F569CF /* Build configuration list for PBXNativeTarget "HANPasswordManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CD3B78018AA0EF100F569CF /* Debug */,
 				5CD3B78118AA0EF100F569CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		5CD3B78218AA0EF100F569CF /* Build configuration list for PBXNativeTarget "passwordSystemTests" */ = {
+		5CD3B78218AA0EF100F569CF /* Build configuration list for PBXNativeTarget "HANPasswordManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CD3B78318AA0EF100F569CF /* Debug */,
 				5CD3B78418AA0EF100F569CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

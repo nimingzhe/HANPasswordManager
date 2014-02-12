@@ -2,8 +2,11 @@
 //  AppDelegate.h
 //  passwordSystem
 //
-//  Created by cuibosoft on 14-2-11.
-//  Copyright (c) 2014年 tridosoft. All rights reserved.
+//  Created by Han Pengbo on 14-2-11.
+//  Copyright (c) 2014年 Han Pengbo.
+//  Distributed under MIT License
+//  Get the latest version of HANPasswordManager from here:
+//  https://github.com/nimingzhe/HANPasswordManager
 //
 
 #import <UIKit/UIKit.h>
