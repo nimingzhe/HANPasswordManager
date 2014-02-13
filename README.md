@@ -1,6 +1,7 @@
 #简介#
 HANPasswordManager类封装了一个密码系统，用于iOS开发。它提供了创建密码、输入并检查密码、修改密码的功能。使用时只需将HANPasswordManager.h和HANPasswordManager.m文件拖入您的项目即可。
-（对许非ARC项目，需要将HANPasswordManager.m的ARC选项打开。）
+
+（对于非ARC项目，需要将HANPasswordManager.m的ARC选项打开。）
 
 #Properties#
     @property id<HANPassswordManagerDelegate> delegate;
