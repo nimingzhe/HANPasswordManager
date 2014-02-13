@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C368D3C18AC59AE00F20FBE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C368D3B18AC59AE00F20FBE /* README.md */; };
 		5CD3B75118AA0EF100F569CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD3B75018AA0EF100F569CF /* Foundation.framework */; };
 		5CD3B75318AA0EF100F569CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD3B75218AA0EF100F569CF /* CoreGraphics.framework */; };
 		5CD3B75518AA0EF100F569CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD3B75418AA0EF100F569CF /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		5CD3B77A18AA0EF100F569CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B77818AA0EF100F569CF /* InfoPlist.strings */; };
 		5CD3B77C18AA0EF100F569CF /* passwordSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */; };
 		5CD3B78718AA0F5600F569CF /* HANPasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */; };
-		6954DBAD18ABBC5D00C7BEBE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6954DBAC18ABBC5D00C7BEBE /* README.md */; };
 		6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C368D3B18AC59AE00F20FBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		5CD3B74D18AA0EF100F569CF /* HANPasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HANPasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B75018AA0EF100F569CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CD3B75218AA0EF100F569CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +59,6 @@
 		5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = passwordSystemTests.m; sourceTree = "<group>"; };
 		5CD3B78518AA0F5600F569CF /* HANPasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANPasswordManager.h; sourceTree = "<group>"; };
 		5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANPasswordManager.m; sourceTree = "<group>"; };
-		6954DBAC18ABBC5D00C7BEBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,8 +139,8 @@
 				5CD3B75918AA0EF100F569CF /* InfoPlist.strings */,
 				5CD3B75C18AA0EF100F569CF /* main.m */,
 				5CD3B75E18AA0EF100F569CF /* HANPasswordManager-Prefix.pch */,
-				6954DBAC18ABBC5D00C7BEBE /* README.md */,
 				6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */,
+				5C368D3B18AC59AE00F20FBE /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */,
-				6954DBAD18ABBC5D00C7BEBE /* README.md in Resources */,
 				5CD3B76918AA0EF100F569CF /* Images.xcassets in Resources */,
+				5C368D3C18AC59AE00F20FBE /* README.md in Resources */,
 				5CD3B75B18AA0EF100F569CF /* InfoPlist.strings in Resources */,
 				5CD3B76418AA0EF100F569CF /* Main.storyboard in Resources */,
 			);
