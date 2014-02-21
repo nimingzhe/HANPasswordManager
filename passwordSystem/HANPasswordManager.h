@@ -22,6 +22,7 @@
 
 @optional
 - (void)passwordDidSetUp;
+- (void)passwordDidChanged;
 
 @end
 

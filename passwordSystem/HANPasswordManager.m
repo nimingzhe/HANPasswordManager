@@ -67,6 +67,7 @@
         [originalAlertView show];
         originalTextField=[originalAlertView textFieldAtIndex:0];
         originalTextField.delegate=self;
+        [self.delegate passwordDidChanged];
     } else {
         [self setUpPassword];
     }
