@@ -37,4 +37,9 @@ HANPasswordManager类封装了一个密码系统，用于iOS开发。它提供�
 
     - (void)passwordDidSetUp;
     
-当成功的创建了密码，就会调用此方法
+当成功的创建了密码，就会调用此方法。
+
+    - (void)passwordDidChanged;
+    
+当密码修改成功，就会调用此方法。
+    
