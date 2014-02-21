@@ -67,7 +67,7 @@
         [originalAlertView show];
         originalTextField=[originalAlertView textFieldAtIndex:0];
         originalTextField.delegate=self;
-        [self.delegate passwordDidChanged];
+        
     } else {
         [self setUpPassword];
     }
@@ -78,7 +78,7 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"didDismissWithButtonIndex %d",buttonIndex);
+    
     if (alertView.tag==isChangingPassword&&buttonIndex==1) {
         if (alertView==originalAlertView) {
             if ([originalTextField.text isEqualToString:password]) {
@@ -110,7 +110,7 @@
                 isPasswordSetted=YES;
                 UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码修改成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 [temp show];
-                [_delegate passwordDidSetUp];
+                [self.delegate passwordDidChanged];
             }
             else
             {
@@ -138,10 +138,10 @@
             secondTextField=[secondAlertView textFieldAtIndex:0];
             secondTextField.delegate=self;
             [secondAlertView show];
-            NSLog(@"temppassword %@",tempPassword);
+            
         }
         if (alertView==secondAlertView) {
-            NSLog(@"secondTextField.text %@",secondTextField.text);
+            
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 password=tempPassword;
                 isPasswordSetted=YES;

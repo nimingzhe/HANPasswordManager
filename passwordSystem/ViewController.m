@@ -56,6 +56,12 @@
     NSLog(@"密码创建成功");
 }
 
+- (void)passwordDidChanged;
+{
+    NSLog(@"密码修改成功");
+}
+
+
 
 
 @end
