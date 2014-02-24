@@ -28,19 +28,21 @@
 
 @interface HANPasswordManager : NSObject <UITextFieldDelegate>
 {
-    NSString *password,*tempPassword;
+    NSString *tempPassword;
     UIAlertView *firstAlertView,*secondAlertView,*originalAlertView,*changingAlertView;
     UITextField *firstTextField,*secondTextField,*originalTextField,*changingTextField;
-    BOOL isPasswordSetted;
+    
     
     
 }
 
 @property id<HANPassswordManagerDelegate> delegate;
+@property NSString *password;
+@property BOOL isPasswordSetted;
 
 - (void)inputAndCheckPassword;
 - (void)setUpPassword;
 - (NSString*)getPaaword;
 - (void)changePassword;
-- (BOOL)isPasswordSetted;
+
 @end

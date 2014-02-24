@@ -35,17 +35,14 @@
 
 - (NSString*)getPaaword
 {
-    return password;
+    return self.password;
 }
 
-- (BOOL)isPasswordSetted
-{
-    return isPasswordSetted;
-}
+
 
 - (void)inputAndCheckPassword;
 {
-    if (isPasswordSetted==YES) {
+    if (self.isPasswordSetted==YES) {
         originalAlertView=[[UIAlertView alloc] initWithTitle:@"请输入您的密码" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isInputingPassword;
@@ -60,7 +57,7 @@
 
 - (void)changePassword;
 {
-    if (isPasswordSetted==YES) {
+    if (self.isPasswordSetted==YES) {
         originalAlertView=[[UIAlertView alloc] initWithTitle:@"请输入您的旧密码" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isChangingPassword;
@@ -81,7 +78,7 @@
     
     if (alertView.tag==isChangingPassword&&buttonIndex==1) {
         if (alertView==originalAlertView) {
-            if ([originalTextField.text isEqualToString:password]) {
+            if ([originalTextField.text isEqualToString:self.password]) {
                 firstAlertView= [[UIAlertView alloc] initWithTitle:@"修改密码" message:@"请输入您要设置的新密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
                 firstAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
                 firstAlertView.tag=isChangingPassword;
@@ -106,8 +103,8 @@
         }
         if (alertView==secondAlertView) {
             if ([tempPassword isEqualToString:secondTextField.text]) {
-                password=tempPassword;
-                isPasswordSetted=YES;
+                self.password=tempPassword;
+                self.isPasswordSetted=YES;
                 UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码修改成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 [temp show];
                 [self.delegate passwordDidChanged];
@@ -120,7 +117,7 @@
         }
     }
     if (alertView.tag==isInputingPassword&&buttonIndex==1) {
-        if ([originalTextField.text isEqualToString:password]) {
+        if ([originalTextField.text isEqualToString:self.password]) {
             [self.delegate rightPasswordDidInput];
         }
         else
@@ -143,8 +140,8 @@
         if (alertView==secondAlertView) {
             
             if ([tempPassword isEqualToString:secondTextField.text]) {
-                password=tempPassword;
-                isPasswordSetted=YES;
+                self.password=tempPassword;
+                self.isPasswordSetted=YES;
                 UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码设置成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 [temp show];
                 [_delegate passwordDidSetUp];
