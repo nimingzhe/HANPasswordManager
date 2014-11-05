@@ -23,6 +23,7 @@
 		5CD3B77A18AA0EF100F569CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B77818AA0EF100F569CF /* InfoPlist.strings */; };
 		5CD3B77C18AA0EF100F569CF /* passwordSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */; };
 		5CD3B78718AA0F5600F569CF /* HANPasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */; };
+		5CFFC9661A09F78100378F6A /* HANPasswordManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CFFC9681A09F78100378F6A /* HANPasswordManager.strings */; };
 		6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		5CD3B77B18AA0EF100F569CF /* passwordSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = passwordSystemTests.m; sourceTree = "<group>"; };
 		5CD3B78518AA0F5600F569CF /* HANPasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANPasswordManager.h; sourceTree = "<group>"; };
 		5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANPasswordManager.m; sourceTree = "<group>"; };
+		5CFFC9671A09F78100378F6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HANPasswordManager.strings; sourceTree = "<group>"; };
+		5CFFC9691A09F7B400378F6A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HANPasswordManager.strings"; sourceTree = "<group>"; };
 		6954DBAE18ABD1AD00C7BEBE /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +129,7 @@
 				5CD3B76618AA0EF100F569CF /* ViewController.m */,
 				5CD3B78518AA0F5600F569CF /* HANPasswordManager.h */,
 				5CD3B78618AA0F5600F569CF /* HANPasswordManager.m */,
+				5CFFC9681A09F78100378F6A /* HANPasswordManager.strings */,
 				5CD3B76818AA0EF100F569CF /* Images.xcassets */,
 				5CD3B75718AA0EF100F569CF /* Supporting Files */,
 			);
@@ -222,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5CD3B74418AA0EF100F569CF;
 			productRefGroup = 5CD3B74E18AA0EF100F569CF /* Products */;
@@ -242,6 +247,7 @@
 				6954DBAF18ABD1AD00C7BEBE /* LICENSE.md in Resources */,
 				5CD3B76918AA0EF100F569CF /* Images.xcassets in Resources */,
 				5C368D3C18AC59AE00F20FBE /* README.md in Resources */,
+				5CFFC9661A09F78100378F6A /* HANPasswordManager.strings in Resources */,
 				5CD3B75B18AA0EF100F569CF /* InfoPlist.strings in Resources */,
 				5CD3B76418AA0EF100F569CF /* Main.storyboard in Resources */,
 			);
@@ -310,6 +316,15 @@
 				5CD3B77918AA0EF100F569CF /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5CFFC9681A09F78100378F6A /* HANPasswordManager.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CFFC9671A09F78100378F6A /* en */,
+				5CFFC9691A09F7B400378F6A /* zh-Hans */,
+			);
+			name = HANPasswordManager.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

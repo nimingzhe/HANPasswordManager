@@ -25,7 +25,7 @@
 - (void)setUpPassword
 {
     
-    firstAlertView= [[UIAlertView alloc] initWithTitle:@"设置密码" message:@"请输入您要设置的密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    firstAlertView= [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password", @"HANPasswordManager", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
     firstAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
     firstAlertView.tag=isSettingPassword;
     [firstAlertView show];
@@ -43,7 +43,7 @@
 - (void)inputAndCheckPassword;
 {
     if (self.isPasswordSetted==YES) {
-        originalAlertView=[[UIAlertView alloc] initWithTitle:@"请输入您的密码" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+        originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isInputingPassword;
         [originalAlertView show];
@@ -58,7 +58,7 @@
 - (void)changePassword;
 {
     if (self.isPasswordSetted==YES) {
-        originalAlertView=[[UIAlertView alloc] initWithTitle:@"请输入您的旧密码" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+        originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Change Password", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Input old password", @"HANPasswordManager", nil) delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isChangingPassword;
         [originalAlertView show];
@@ -79,7 +79,7 @@
     if (alertView.tag==isChangingPassword&&buttonIndex==1) {
         if (alertView==originalAlertView) {
             if ([originalTextField.text isEqualToString:self.password]) {
-                firstAlertView= [[UIAlertView alloc] initWithTitle:@"修改密码" message:@"请输入您要设置的新密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+                firstAlertView= [[UIAlertView alloc] initWithTitle: NSLocalizedStringFromTable(@"Change Password", @"HANPasswordManager", nil)message:NSLocalizedStringFromTable(@"Input new password", @"HANPasswordManager", nil) delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
                 firstAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
                 firstAlertView.tag=isChangingPassword;
                 [firstAlertView show];
@@ -88,13 +88,13 @@
             }
             else
             {
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码错误" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Password Incorrect", @"HANPasswordManager", nil) message:nil delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
             }
         }
         if (alertView==firstAlertView) {
             tempPassword=firstTextField.text;
-            secondAlertView=[[UIAlertView alloc] initWithTitle:@"修改密码" message:@"请再次输入您要设置的新密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+            secondAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Change Password", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Input new password again", @"HANPasswordManager", nil)  delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
             secondAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
             secondAlertView.tag=isChangingPassword;
             secondTextField=[secondAlertView textFieldAtIndex:0];
@@ -105,13 +105,13 @@
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 self.password=tempPassword;
                 self.isPasswordSetted=YES;
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码修改成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Change password successfully", @"HANPasswordManager", nil) message:@"" delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
                 [self.delegate passwordDidChanged];
             }
             else
             {
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码修改失败" message:@"两次输入的密码不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Changing password failed", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Two password not match", @"HANPasswordManager", nil) delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
             }
         }
@@ -122,14 +122,14 @@
         }
         else
         {
-            UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码错误" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Password Incorrect", @"HANPasswordManager", nil) message:nil delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
             [temp show];
         }
     }
     if (alertView.tag==isSettingPassword&&buttonIndex==1) {
         if (alertView==firstAlertView) {
             tempPassword=firstTextField.text;
-            secondAlertView=[[UIAlertView alloc] initWithTitle:@"设置密码" message:@"请再次输入您要设置的密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+            secondAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Input password again", @"HANPasswordManager", nil) delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
             secondAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
             secondAlertView.tag=isSettingPassword;
             secondTextField=[secondAlertView textFieldAtIndex:0];
@@ -142,13 +142,13 @@
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 self.password=tempPassword;
                 self.isPasswordSetted=YES;
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码设置成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password successfully", @"HANPasswordManager", nil) message:@"" delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
                 [_delegate passwordDidSetUp];
             }
             else
             {
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码设置失败" message:@"两次输入的密码不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Setting Password failed", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Two password not match", @"HANPasswordManager", nil) delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
             }
             
