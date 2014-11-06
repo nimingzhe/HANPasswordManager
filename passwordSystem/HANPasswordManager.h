@@ -10,6 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define isSettingPassword 1
 #define isChangingPassword 2
