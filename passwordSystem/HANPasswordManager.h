@@ -24,6 +24,8 @@
 - (void)passwordDidSetUp;
 - (void)passwordDidChanged;
 
+- (void)PasswordDidCancelSettingUp;
+
 @end
 
 @interface HANPasswordManager : NSObject <UITextFieldDelegate>

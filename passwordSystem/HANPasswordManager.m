@@ -166,6 +166,11 @@
         }
     }
     
+    if (alertView.tag==isSettingPassword&&buttonIndex==0)
+    {
+        [self.delegate PasswordDidCancelSettingUp];
+    }
+    
 }
 
 

@@ -61,6 +61,11 @@
     NSLog(@"密码修改成功");
 }
 
+- (void)PasswordDidCancelSettingUp
+{
+    NSLog(@"取消设置");
+}
+
 
 
 
