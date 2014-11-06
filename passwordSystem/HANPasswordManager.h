@@ -31,9 +31,6 @@
     NSString *tempPassword;
     UIAlertView *firstAlertView,*secondAlertView,*originalAlertView,*changingAlertView;
     UITextField *firstTextField,*secondTextField,*originalTextField,*changingTextField;
-    
-    
-    
 }
 
 @property id<HANPassswordManagerDelegate> delegate;

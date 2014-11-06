@@ -48,8 +48,7 @@
 #pragma mark HANPassswordManagerDelegate
 - (void)rightPasswordDidInput
 {
-    UIAlertView *temp=[[UIAlertView alloc] initWithTitle:@"密码输入正确" message:nil delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles: nil ];
-    [temp show];
+    NSLog(@"密码输入正确");
 }
 
 - (void)passwordDidSetUp

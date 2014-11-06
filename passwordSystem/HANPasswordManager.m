@@ -18,6 +18,11 @@
     if (self!=nil) {
         firstAlertView.delegate=self;
         secondAlertView.delegate=self;
+        
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        self.password=[defaults stringForKey:@"HAN_password"];
+        NSLog(@"first password:%@",[defaults stringForKey:@"HAN_password"]);
+        
     }
     return self;
 }
@@ -42,7 +47,7 @@
 
 - (void)inputAndCheckPassword;
 {
-    if (self.isPasswordSetted==YES) {
+    if (self.password!=nil) {
         originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isInputingPassword;
@@ -50,14 +55,14 @@
         originalTextField=[originalAlertView textFieldAtIndex:0];
         originalTextField.delegate=self;
     } else {
-        [self setUpPassword];
+        @throw [NSException exceptionWithName:@"HANPasswordManager Exception" reason:@"No password is set up,so you can't invoke -inputAndCheckPassword" userInfo:nil];
     }
     
 }
 
 - (void)changePassword;
 {
-    if (self.isPasswordSetted==YES) {
+    if (self.password!=nil) {
         originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Change Password", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Input old password", @"HANPasswordManager", nil) delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isChangingPassword;
@@ -104,9 +109,12 @@
         if (alertView==secondAlertView) {
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 self.password=tempPassword;
-                self.isPasswordSetted=YES;
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Change password successfully", @"HANPasswordManager", nil) message:@"" delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
-                [temp show];
+                
+                
+                NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:self.password forKey:@"HAN_password"];
+                [defaults synchronize];
+                
                 [self.delegate passwordDidChanged];
             }
             else
@@ -141,9 +149,12 @@
             
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 self.password=tempPassword;
-                self.isPasswordSetted=YES;
-                UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password successfully", @"HANPasswordManager", nil) message:@"" delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
-                [temp show];
+                
+                
+                NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:self.password forKey:@"HAN_password"];
+                [defaults synchronize];
+                
                 [_delegate passwordDidSetUp];
             }
             else
