@@ -31,6 +31,7 @@
 {
     
     firstAlertView= [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password", @"HANPasswordManager", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
+
     firstAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
     firstAlertView.tag=isSettingPassword;
     [firstAlertView show];
@@ -49,6 +50,9 @@
 {
     if (self.password!=nil) {
         originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
+        if (self.mustInputPassword==YES) {
+            originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
+        }
         originalAlertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
         originalAlertView.tag=isInputingPassword;
         [originalAlertView show];
@@ -124,15 +128,34 @@
             }
         }
     }
-    if (alertView.tag==isInputingPassword&&buttonIndex==1) {
+    if (alertView.tag==isInputingPassword&&(buttonIndex==1||self.mustInputPassword==YES)) {
         if ([originalTextField.text isEqualToString:self.password]) {
             [self.delegate rightPasswordDidInput];
         }
         else
         {
             UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Password Incorrect", @"HANPasswordManager", nil) message:nil delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
+            
+            if (self.mustInputPassword) {
+                temp.tag=isInputtingAgain;
+                temp.delegate=self;
+            }
+            
             [temp show];
+            NSLog(@"password error");
+            NSLog(@"alertview.tag %d",alertView.tag);
+            NSLog(@"temp.tag %d",temp.tag);
         }
+    }
+    
+    if (alertView.tag==isInputtingAgain) {
+        NSLog(@"input again");
+        [self inputAndCheckPassword];
+    }
+    
+    if (alertView.tag==isInputingPassword&&buttonIndex==0&&self.mustInputPassword==NO)
+    {
+        [self.delegate cancelInputtingPassword];
     }
     if (alertView.tag==isSettingPassword&&buttonIndex==1) {
         if (alertView==firstAlertView) {
@@ -161,6 +184,8 @@
             {
                 UIAlertView *temp=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Setting Password failed", @"HANPasswordManager", nil) message:NSLocalizedStringFromTable(@"Two password not match", @"HANPasswordManager", nil) delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
                 [temp show];
+                temp.tag=isSettingUpAgain;
+                temp.delegate=self;
             }
             
         }
@@ -168,7 +193,11 @@
     
     if (alertView.tag==isSettingPassword&&buttonIndex==0)
     {
-        [self.delegate PasswordDidCancelSettingUp];
+        [self.delegate cancelSettingUpPassword];
+    }
+    
+    if (alertView.tag==isSettingUpAgain) {
+        [self setUpPassword];
     }
     
 }

@@ -15,6 +15,8 @@
 #define isSettingPassword 1
 #define isChangingPassword 2
 #define isInputingPassword 3
+#define isInputtingAgain 4
+#define isSettingUpAgain 5
 
 
 @protocol HANPassswordManagerDelegate <NSObject>
@@ -25,7 +27,8 @@
 - (void)passwordDidSetUp;
 - (void)passwordDidChanged;
 
-- (void)PasswordDidCancelSettingUp;
+- (void)cancelSettingUpPassword;
+- (void)cancelInputtingPassword;
 
 @end
 
@@ -38,7 +41,9 @@
 
 @property id<HANPassswordManagerDelegate> delegate;
 @property NSString *password;
-@property BOOL isPasswordSetted;
+@property BOOL mustInputPassword;
+
+
 
 - (void)inputAndCheckPassword;
 - (void)setUpPassword;
