@@ -79,6 +79,14 @@
     }
 }
 
+- (void)removePasswordFromPrefrence;
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"HAN_password"];
+    [defaults synchronize];
+    
+}
+
 #pragma mark -
 #pragma mark UIAlertViewDelegate
 
@@ -142,9 +150,7 @@
             }
             
             [temp show];
-            NSLog(@"password error");
-            NSLog(@"alertview.tag %d",alertView.tag);
-            NSLog(@"temp.tag %d",temp.tag);
+            
         }
     }
     

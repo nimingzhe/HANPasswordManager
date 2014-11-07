@@ -47,7 +47,9 @@
 
 - (void)inputAndCheckPassword;
 - (void)setUpPassword;
-- (NSString*)getPaaword;
 - (void)changePassword;
+
+- (void)removePasswordFromPrefrence;
+
 
 @end

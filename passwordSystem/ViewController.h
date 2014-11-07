@@ -21,5 +21,6 @@
 - (IBAction)setPassword:(id)sender;
 - (IBAction)inputPassword:(id)sender;
 - (IBAction)changePassword:(id)sender;
+- (IBAction)removePassword:(id)sender;
 
 @end

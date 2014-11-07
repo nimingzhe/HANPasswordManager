@@ -33,7 +33,7 @@
 
 - (IBAction)setPassword:(id)sender {
     [manager setUpPassword];
-    NSLog(@"password %@",[manager getPaaword]);
+    
 }
 
 - (IBAction)inputPassword:(id)sender {
@@ -42,6 +42,15 @@
 
 - (IBAction)changePassword:(id)sender {
     [manager changePassword];
+}
+
+- (IBAction)removePassword:(id)sender {
+    [manager removePasswordFromPrefrence];
+    //debug
+    NSArray *keys = [[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] copy];
+    for(NSString *key in keys) {
+        NSLog(@"Key Name: %@", key);
+    }
 }
 
 #pragma mark -
@@ -54,6 +63,11 @@
 - (void)passwordDidSetUp
 {
     NSLog(@"密码创建成功");
+    //debug
+    NSArray *keys = [[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] copy];
+    for(NSString *key in keys) {
+        NSLog(@"Key Name: %@", key);
+    }
 }
 
 - (void)passwordDidChanged;
