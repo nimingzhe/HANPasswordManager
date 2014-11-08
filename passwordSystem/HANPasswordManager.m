@@ -127,7 +127,11 @@
                 [defaults setObject:self.password forKey:@"HAN_password"];
                 [defaults synchronize];
                 
-                [self.delegate passwordDidChanged];
+                if ([self.delegate respondsToSelector:@selector(passwordDidChanged)])
+                {
+                    [self.delegate passwordDidChanged];
+                }
+                
             }
             else
             {
@@ -138,7 +142,11 @@
     }
     if (alertView.tag==isInputingPassword&&(buttonIndex==1||self.mustInputPassword==YES)) {
         if ([originalTextField.text isEqualToString:self.password]) {
-            [self.delegate rightPasswordDidInput];
+            if ([self.delegate respondsToSelector:@selector(rightPasswordDidInput)])
+            {
+                [self.delegate rightPasswordDidInput];
+            }
+            
         }
         else
         {
@@ -161,7 +169,11 @@
     
     if (alertView.tag==isInputingPassword&&buttonIndex==0&&self.mustInputPassword==NO)
     {
-        [self.delegate cancelInputtingPassword];
+        if ([self.delegate respondsToSelector:@selector(cancelInputtingPassword)])
+        {
+            [self.delegate cancelInputtingPassword];
+        }
+        
     }
     if (alertView.tag==isSettingPassword&&buttonIndex==1) {
         if (alertView==firstAlertView) {
@@ -184,7 +196,11 @@
                 [defaults setObject:self.password forKey:@"HAN_password"];
                 [defaults synchronize];
                 
-                [_delegate passwordDidSetUp];
+                if ([self.delegate respondsToSelector:@selector(passwordDidSetUp)])
+                {
+                    [_delegate passwordDidSetUp];
+                }
+                
             }
             else
             {
@@ -199,7 +215,10 @@
     
     if (alertView.tag==isSettingPassword&&buttonIndex==0)
     {
-        [self.delegate cancelSettingUpPassword];
+        if ([self.delegate respondsToSelector:@selector(cancelSettingUpPassword)]) {
+            [self.delegate cancelSettingUpPassword];
+        }
+        
     }
     
     if (alertView.tag==isSettingUpAgain) {
