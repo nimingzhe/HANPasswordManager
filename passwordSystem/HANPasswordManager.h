@@ -21,9 +21,11 @@
 
 @protocol HANPassswordManagerDelegate <NSObject>
 
+@optional
+
 - (void)rightPasswordDidInput;
 
-@optional
+
 - (void)passwordDidSetUp;
 - (void)passwordDidChanged;
 
@@ -37,6 +39,7 @@
     NSString *tempPassword;
     UIAlertView *firstAlertView,*secondAlertView,*originalAlertView,*changingAlertView;
     UITextField *firstTextField,*secondTextField,*originalTextField,*changingTextField;
+    BOOL isBusy;
 }
 
 @property id<HANPassswordManagerDelegate> delegate;

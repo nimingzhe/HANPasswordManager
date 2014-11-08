@@ -29,6 +29,13 @@
 
 - (void)setUpPassword
 {
+    if (isBusy) {
+        return;
+    }
+    else
+    {
+        isBusy=YES;
+    }
     
     firstAlertView= [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Set Password", @"HANPasswordManager", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
 
@@ -48,7 +55,18 @@
 
 - (void)inputAndCheckPassword;
 {
+    if (isBusy) {
+        NSLog(@"is inputting password");
+        return;
+    }
+    else
+    {
+        isBusy=YES;
+    }
+    
     if (self.password!=nil) {
+        
+        
         originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Cancel", @"HANPasswordManager", nil) otherButtonTitles:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil),nil];
         if (self.mustInputPassword==YES) {
             originalAlertView=[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Input Password", @"HANPasswordManager", nil) message:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"Done", @"HANPasswordManager", nil) otherButtonTitles:nil];
@@ -75,7 +93,7 @@
         originalTextField.delegate=self;
         
     } else {
-        [self setUpPassword];
+        @throw [NSException exceptionWithName:@"HANPasswodManager ChangePassword Exception" reason:@"Yuo need to set up password before chage it."  userInfo:nil];
     }
 }
 
@@ -84,6 +102,8 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:nil forKey:@"HAN_password"];
     [defaults synchronize];
+    
+    self.password=nil;
     
 }
 
@@ -141,6 +161,7 @@
         }
     }
     if (alertView.tag==isInputingPassword&&(buttonIndex==1||self.mustInputPassword==YES)) {
+        isBusy=NO;
         if ([originalTextField.text isEqualToString:self.password]) {
             if ([self.delegate respondsToSelector:@selector(rightPasswordDidInput)])
             {
@@ -187,6 +208,7 @@
             
         }
         if (alertView==secondAlertView) {
+            isBusy=NO;
             
             if ([tempPassword isEqualToString:secondTextField.text]) {
                 self.password=tempPassword;
@@ -218,12 +240,14 @@
         if ([self.delegate respondsToSelector:@selector(cancelSettingUpPassword)]) {
             [self.delegate cancelSettingUpPassword];
         }
-        
+        isBusy=NO;
     }
     
     if (alertView.tag==isSettingUpAgain) {
         [self setUpPassword];
     }
+    
+    
     
 }
 
